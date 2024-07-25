@@ -17,6 +17,7 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -24,7 +25,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 
-export function LoadingScreen() {
+export function LoadingScreen({onNavigateToInitial}) {
   return (
     <Card className="max-w-4xl mx-auto p-6 sm:p-8 md:p-10">
       <CardHeader>
@@ -78,18 +79,20 @@ export function LoadingScreen() {
             </div>
           </div>
           <div className="flex flex-col gap-4 items-start">
-            <Button
-              type="submit"
-              className="ml-auto"
-              disabled={
-                !document.getElementById("items-needed")?.value ||
-                !document.getElementById("quantity-needed")?.value ||
-                !document.getElementById("location")?.value ||
-                !document.getElementById("date-needed")?.value
-              }
-            >
-              Find Matches
-            </Button>
+          <Link 
+            href="#" 
+            className={`ml-auto ${(
+              !document.getElementById("items-needed")?.value ||
+              !document.getElementById("quantity-needed")?.value ||
+              !document.getElementById("location")?.value ||
+              !document.getElementById("date-needed")?.value
+            ) ? 'disabled-link-class' : 'active-link-class'}`}
+            prefetch={false} 
+            onClick={onNavigateToInitial}
+          >
+            Find Matches
+          </Link>
+
           </div>
         </form>
       </CardContent>

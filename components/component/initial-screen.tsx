@@ -24,16 +24,15 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 "use client"
-
+import Link from "next/link"
 import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
-export function InitialScreen() {
+export function InitialScreen({ onNavigateToLoading }) {
   const items = [
     {
       id: 1,
-      image: "/placeholder.svg",
+      image: "/CoffeeBeans.jpg",
       title: "Gourmet Coffee Beans",
       quantity: 50,
       price: 18.99,
@@ -238,7 +237,15 @@ export function InitialScreen() {
             >
               All Products
             </Button>
-            <Button className="bg-[#006400] text-white hover:bg-[#008000]">Filter for specific requirement</Button>
+            <Link 
+              href="#" 
+              className="text-muted-foreground" 
+              prefetch={false} 
+              onClick={() => onNavigateToLoading("loading")}
+            >
+              Filter for specific requirement
+            </Link>
+
           </div>
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

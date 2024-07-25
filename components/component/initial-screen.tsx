@@ -213,11 +213,10 @@ export function InitialScreen({ onNavigateToLoading }: { onNavigateToLoading: ()
           </div>
           <div className="ml-auto flex gap-2">
             <Button
-              variant={filter === "food" ? "primary" : "outline"}
+              variant={filter === "food" ? "default" : "outline"}
               className={`${
                 filter === "food" ? "bg-[#006400] text-white hover:bg-[#008000]" : "text-muted-foreground"
               }`}
-              onClick={() => setFilter("food")}
             >
               Food
             </Button>

@@ -60,11 +60,8 @@ export function LoadingScreen({ onNavigateToInitial }) {
             </div>
           </div>
           <div className="flex flex-col gap-4 items-start">
-            <Link 
-              href="#" 
-              passHref
-            >
-              <a 
+            <Link href="#" passHref>
+              <a
                 className={'ml-auto ${(
                   !document.getElementById("items-needed")?.value ||
                   !document.getElementById("quantity-needed")?.value ||

@@ -28,7 +28,7 @@ import Link from "next/link"
 import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 
-export function InitialScreen({ onNavigateToLoading }) {
+export function InitialScreen({ onNavigateToLoading }: { onNavigateToInitial: () => void }){
   const items = [
     {
       id: 1,
@@ -241,7 +241,7 @@ export function InitialScreen({ onNavigateToLoading }) {
               href="#" 
               className="text-muted-foreground" 
               prefetch={false} 
-              onClick={() => onNavigateToLoading("loading")}
+              onClick={onNavigateToInitial}
             >
               Filter for specific requirement
             </Link>

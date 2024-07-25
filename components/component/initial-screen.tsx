@@ -221,7 +221,7 @@ export function InitialScreen({ onNavigateToLoading }: { onNavigateToLoading: ()
               Food
             </Button>
             <Button
-              variant={filter === "beverages" ? "primary" : "outline"}
+              variant={filter === "beverages" ? "default" : "outline"}
               className={`${
                 filter === "beverages" ? "bg-[#006400] text-white hover:bg-[#008000]" : "text-muted-foreground"
               }`}
@@ -230,7 +230,7 @@ export function InitialScreen({ onNavigateToLoading }: { onNavigateToLoading: ()
               Beverages
             </Button>
             <Button
-              variant={filter === "all" ? "primary" : "outline"}
+              variant={filter === "all" ? "default" : "outline"}
               className={`${filter === "all" ? "bg-[#006400] text-white hover:bg-[#008000]" : "text-muted-foreground"}`}
               onClick={() => setFilter("all")}
             >

@@ -6,12 +6,12 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 
-export function LoadingScreen({ onNavigateToInitial }) {
+export function LoadingScreen({ onNavigateToInitial }: { onNavigateToInitial: () => void }) {
   return (
     <Card className="max-w-4xl mx-auto p-6 sm:p-8 md:p-10">
       <CardHeader>
         <CardTitle className="text-3xl font-bold">Marketplace Needs</CardTitle>
-        <CardDescription>Enter the details of the items you're looking to purchase.</CardDescription>
+        <CardDescription>Enter the details of the items you&apos;re looking to purchase.</CardDescription>
       </CardHeader>
       <CardContent>
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -75,7 +75,7 @@ export function LoadingScreen({ onNavigateToInitial }) {
   );
 }
 
-function CalendarDaysIcon(props) {
+function CalendarDaysIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -103,7 +103,7 @@ function CalendarDaysIcon(props) {
   );
 }
 
-function XIcon(props) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -122,3 +122,4 @@ function XIcon(props) {
     </svg>
   );
 }
+

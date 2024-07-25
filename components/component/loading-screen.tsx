@@ -62,12 +62,12 @@ export function LoadingScreen({ onNavigateToInitial }) {
           <div className="flex flex-col gap-4 items-start">
             <Link href="#" passHref>
               <a
-                className={`ml-auto ${(
+                className={'ml-auto ${(
                   !document.getElementById("items-needed")?.value ||
                   !document.getElementById("quantity-needed")?.value ||
                   !document.getElementById("location")?.value ||
                   !document.getElementById("date-needed")?.value
-                ) ? 'disabled-link-class' : 'active-link-class'}`}
+                ) ? 'disabled-link-class' : 'active-link-class'}'}
                 onClick={onNavigateToInitial}
               >
                 Find Matches
